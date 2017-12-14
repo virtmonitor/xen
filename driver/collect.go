@@ -101,7 +101,7 @@ func (x *Xen) Collect(cpu bool, block bool, network bool) (domains map[driver.Do
 					dnetwork := driver.NetworkInterface{}
 
 					//viftype := Paths[fmt.Sprintf("%s/%s", path, "type")]
-					dnetwork.Bridge = Paths[fmt.Sprintf("%s/%s", path, "bridge")]
+					dnetwork.Bridges = []string{Paths[fmt.Sprintf("%s/%s", path, "bridge")]}
 
 					dnetwork.Mac, _ = net.ParseMAC(Paths[fmt.Sprintf("%s/%s", path, "mac")])
 
