@@ -1,7 +1,10 @@
-// +build linux
-
 package main
 
-import _ "github.com/virtmonitor/xen/driver"
+import (
+	"github.com/virtmonitor/xen/driver"
+)
+
+//Driver Pointer to driver backend
+var Driver *xen.Xen
 
 func main() {}
