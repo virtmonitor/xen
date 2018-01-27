@@ -1,12 +1,10 @@
 package main
 
 import (
-	"github.com/virtmonitor/driver"
-
 	"github.com/virtmonitor/xen/driver"
 )
 
-//Driver driver backend
-var Driver driver.Driver = &xen.Xen{}
+//Driver Driver backend
+var Driver = &xen.Xen{}
 
 func main() {}
