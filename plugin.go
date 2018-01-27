@@ -5,6 +5,8 @@ import (
 )
 
 //Driver driver backend
-var Driver interface{} = &xen.Xen{}
+type Driver struct {
+	xen.Xen
+}
 
 func main() {}
