@@ -5,6 +5,6 @@ import (
 )
 
 //Driver driver backend
-var Driver *xen.Xen
+var Driver = &xen.Xen{}
 
 func main() {}
