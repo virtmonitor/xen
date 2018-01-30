@@ -67,8 +67,8 @@ func init() {
 }
 
 //Name Driver name
-func (x *Xen) Name() string {
-	return "XEN"
+func (x *Xen) Name() driver.DomainHypervisor {
+	return driver.DomainHypervisor("XEN")
 }
 
 //Close Close Driver
