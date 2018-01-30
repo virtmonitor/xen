@@ -61,7 +61,8 @@ func (x *Xen) Collect(cpu bool, block bool, network bool) (domains map[driver.Do
 	// skip Domain0 -- i == domain index (id)
 	for _, i := range domainIds {
 
-		domain := &driver.Domain{}
+		//Populate Hypervisor field with driver name
+		domain := &driver.Domain{Hypervisor: x.Name()}
 
 		// get name
 		name := Paths[fmt.Sprintf("/local/domain/%d/name", i)]
