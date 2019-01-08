@@ -1,10 +1,17 @@
 package main
 
 import (
-	"github.com/virtmonitor/xen/driver"
+	plugin "github.com/hashicorp/go-plugin"
+	"github.com/virtmonitor/plugins"
+	xen "github.com/virtmonitor/xen/driver"
 )
 
-//Driver Driver backend
-var Driver = &xen.Xen{}
-
-func main() {}
+func main() {
+	plugin.Serve(&plugin.ServeConfig{
+		HandshakeConfig: plugins.Handshake,
+		Plugins: map[string]plugin.Plugin{
+			"driver_grpc": &plugins.DriverGrpcPlugin{Impl: &xen.Xen{}},
+		},
+		GRPCServer: plugin.DefaultGRPCServer,
+	})
+}
