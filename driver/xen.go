@@ -62,16 +62,10 @@ type Vcpu struct {
 	Time  float64
 }
 
-func init() {
-	driver.RegisterDriver(&Xen{})
-}
-
 //Name Driver name
 func (x *Xen) Name() driver.DomainHypervisor {
 	return driver.DomainHypervisor("XEN")
 }
 
 //Close Close Driver
-func (x *Xen) Close() {
-	return
-}
+func (x *Xen) Close() {}
