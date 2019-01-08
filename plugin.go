@@ -12,7 +12,7 @@ import (
 
 func main() {
 	logger := hclog.New(&hclog.LoggerOptions{
-		Name:   "KVM",
+		Name:   "XEN",
 		Output: os.Stderr,
 	})
 
